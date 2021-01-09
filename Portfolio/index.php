@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<HTML>
+<head>
+	<?php include "_Header.php" ?>
+	<meta name="Description" content="Portfolio website of Game Development student Stijn van Deijzen, specializing in VR">
+	<title>Home</title>
+	<style type="text/css">
+		#WritingNav{display: none;}
+	</style>
+</head>
+<body id="Home" >
+	<?php include "_Nav.php"; ?>
+
+	<div class="Bottom">
+		<!--<div class="TextBox CursorHover" href="About">
+			<h class="TextBoxTitle Write Cursor"><u>NOTICE</u></h>
+			<div class="TextBoxText Write">
+				<p>
+				This site is NOT finished, I will be rewriting, adding and changing this site.
+				</p>
+			</div>
+		</div>-->
+		<a class="TextBox CursorHover" href="Projects">
+			<h class="TextBoxTitle Write Cursor">Projects</h>
+			<p class="TextBoxText Write">
+				- What I've worked on
+			</p>
+		</a>
+<a class="TextBox CursorHover" href="About">
+			<h class="TextBoxTitle Write Cursor">About</h>
+			<p class="TextBoxText Write">
+				- Who I am
+			</p>
+		</a>
+		<a class="TextBox CursorHover" href="Contact">
+			<h class="TextBoxTitle Write Cursor">Contact</h>
+			<p class="TextBoxText Write">
+				- How to reach me
+			</p>
+		</a>
+		<div style="height:100px;"></div><!-- Footer Margin -->
+	</div>
+</body>
+<HTML>

@@ -1,0 +1,5 @@
+{ 
+	"FullName" : "VR Mech Experiment",
+	"Priority" : 300,
+	"Description":"An experiment for an asynchronous coöperative VR mech game"	
+}

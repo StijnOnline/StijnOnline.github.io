@@ -1,0 +1,322 @@
+/*General*/
+html{
+    font-family: Consolas, Arial, Helvetica;
+}
+
+body{
+	background-color: #202020;
+    margin:0px;
+}
+
+a{
+	text-decoration: none;
+}
+
+p, h1{
+	margin: 0;
+}
+
+
+/*Default Text Color*/
+
+p{
+	color: #ff8855; 
+}
+
+a:link, 
+a:visited{
+	color: #ffc0a0; 
+}
+
+a:hover, 
+.Project:hover{
+	text-decoration: underline;
+}
+
+
+/*	Top Banner + Navigation	*/
+#Top{
+	height: 10vmin;
+
+	position: fixed;
+	z-index:1;
+	top: 0;
+
+	width: 100%;
+	
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+
+	background-color: #111;
+    box-shadow: 0px 5px 8px 0px #000a;
+}
+
+#Top #WritingNav{
+	padding: 10px; 
+
+	float: right;
+	flex-basis: 100%;
+
+	border-top: 1px solid black;
+	background-color: #111;
+	box-shadow: 0px 5px 8px 0px #000a;
+
+	color: #ff8855; 
+	text-decoration: none;
+}
+#Top img#Logo{
+	height: 100%;
+}
+#TopText{
+	padding-left: 30px;
+}
+#Top #FirstName{
+	font-size: 4vmin;
+}
+#Top #LastName{
+	font-size: 2vmin;
+}
+#WritingNav{
+	font-size: 3vmin;
+}
+.Bottom{
+	margin-top: 18vmin;
+	min-height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+
+
+
+
+
+.ImageTextBox{
+	margin: 5vmin 5vmin 5vmin 8vmin;
+
+	display: flex;
+
+    color: #ff8855 !important; 
+	text-decoration: none !important;
+}
+
+.ImageTextBoxText{
+	min-height: 15vmin;
+	flex-grow: 1;
+
+	padding: 15px;
+	padding-left: 30px;
+	margin-left: 35vmin;
+	
+	background-color: #111;	
+	box-shadow: 10px 10px 20px 0px #000b;
+
+    border: 2px solid #ff8855;
+}
+
+.ImageTextBoxTitle{
+	padding: 5px;
+	font-style: bold;
+	position: absolute;
+    margin-left: -20px;
+    margin-top: -4vmin;
+    min-width: 38vmin;    
+    background-color: #111;
+    border: 2px solid #ff8855;
+
+	font-size: 4vmin;
+	
+}
+
+.ImageTextBoxDescription{
+	font-size: 3vmin;
+	margin: 6px 0px 0px 6px;
+}
+
+.ImageTextBoxImage{
+	position: absolute;
+
+    margin-top: 10px;
+
+	width: 35vmin;
+	height: 20vmin;
+
+	object-fit: cover;
+	flex-shrink: 0;
+
+    border: 2px solid #ff8855;
+
+	box-shadow: 10px 10px 20px 0px #000b;
+	
+}
+
+
+
+
+
+
+
+
+
+
+.FloatyImageLeft{
+
+	position: relative;
+
+	float: left;
+
+	width: 35vmin;
+	height: 20vmin;
+
+	object-fit: cover;
+
+	border: 2px solid #ff8855;
+
+	box-shadow: 10px 10px 20px 0px #000b;
+
+	margin-right: 3vmin;
+	margin-bottom: 5px;
+}
+.FloatyImageRight{
+
+	position: relative;
+
+	float: right;
+	margin-left: 3vmin;
+	margin-bottom: 5px;
+
+	width: 35vmin;
+	height: 20vmin;
+
+	object-fit: cover;
+
+	border: 2px solid #ff8855;
+
+	box-shadow: 10px 10px 20px 0px #000b;
+
+	
+}
+
+
+
+
+.TextBox {
+	margin: 5vmin 5vmin 5vmin 8vmin;
+	background-color: #111;
+
+	color: #ff8855 !important; 
+	text-decoration: none !important;
+}
+.TextBoxTitle {
+	padding: 5px 10px;
+    margin-left: -20px;
+    margin-top: -4vmin;
+    position: absolute;
+
+    color: #ff8855;
+    background-color: #111;
+    border: 2px solid #ff8855; /*coral*/
+    box-shadow: 10px 10px 20px 0px #000b;
+    
+}
+.TextBoxText {
+	padding: 6vmin 3vmin 3vmin 3vmin;
+    box-shadow: 10px 10px 20px 0px #000b;
+    border: 2px solid #ff8855;
+
+    overflow: auto;
+    /*so floats change this size*/
+}
+.TextBoxTitle {
+	font-size: 4vmin;
+}
+.TextBoxText {
+	font-size: 3vmin;
+}
+
+
+
+/*
+form{
+	margin: 0;
+}
+input, textarea{
+	width: auto;
+    height: 30px;
+
+	background-color: #333;
+    border: 1px solid #ff8855;	
+
+    font-size: 2vw;
+    color: white;
+}
+textarea{
+	resize: none;
+	height: 5em;
+	display: inline-block;
+}
+input[type="submit"]{
+	margin-top: 10px;
+	color: #ff8855;
+}
+*/
+
+
+
+/* Style the Image Used to Trigger the Modal */
+.PopupImage {
+  cursor: pointer;
+  transition: 0.3s;
+}
+.PopupImage:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-image {
+  display: block;
+  width: 80%;
+  /*centering*/
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+
+  border: 2px solid #ff8855;
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}

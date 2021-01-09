@@ -1,0 +1,278 @@
+/*General*/
+html{
+    font-family: Consolas, Arial, Helvetica;
+}
+
+body{
+	background-color: #202020;
+    margin:0px;
+}
+
+a{
+	text-decoration: none;
+}
+
+p, h1{
+	margin: 0;
+}
+
+
+/*Default Text Color*/
+a:link, 
+a:visited,
+p{
+	color: #ff8855; /*coral*/
+}
+
+a:hover, 
+.Project:hover{
+	color: #ff9d73; /*lighter*/
+}
+
+
+/*	Top Banner + Navigation	*/
+#Top{
+	position: fixed;
+	z-index:1;
+	top: 0;
+
+	width: 100%;
+	
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+	background-color: #111;
+    box-shadow: 0px 5px 8px 0px #000a;
+}
+
+#Top #WritingNav{
+	padding: 10px; 
+
+	float: right;
+	flex-basis: 100%;
+
+	border-top: 1px solid black;
+	background-color: #111;
+	box-shadow: 0px 5px 8px 0px #000a;
+}
+#Top img#Logo{
+	flex-shrink: 0;
+}
+
+#TopText{
+	padding-left: 3vh;
+}
+
+@media (orientation: portrait){
+	#Top img#Logo{
+		height: 22vw;
+		width: 22vw;
+	}
+	#Top #FirstName{
+		font-size: 10vw;
+	}
+	#Top #LastName{
+		font-size: 4vw;
+	}
+	#WritingNav{
+		font-size: 5vw;
+	}
+	.Bottom{
+		margin-top: 20vh;
+		min-height: 80vh;
+	}
+	
+}
+
+@media (orientation: landscape){
+	#Top img#Logo{
+		height:  15vh;
+		width:  15vh;
+	}
+	#Top #FirstName{
+		font-size: 7vh;
+	}
+
+	#Top #LastName{
+		font-size: 3vh;
+	}
+	#WritingNav{
+		font-size: 5vh;
+	}
+	.Bottom{
+		margin-top: 25vh;
+		min-height: 75vh;
+	}
+}
+
+
+.Bottom{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+
+	margin-left: 5vw;
+}
+
+/*Projects*/
+.ImageTextBox{
+	margin: 40 80 40 0;
+
+	display: flex;
+    
+    color: #ff8855; /*coral*/
+}
+
+.ImageTextBox:hover .ImageTextBoxText{
+    background-color: #111;
+}
+
+.ImageTextBoxText{
+	min-height: 150px;
+	flex-grow: 1;
+
+	padding: 15px;
+	padding-left: 30px;
+	margin: 15px 0px 15px 350px;
+	
+	background-color: #111;	
+	box-shadow: 10px 10px 20px 0px #000b;
+
+	border: 2px solid;
+}
+
+.ImageTextBoxTitle{
+	padding: 5px;
+	font-size: 3vh;
+	font-style: bold;
+	position: absolute;
+    margin-left: -20;
+    margin-top: -40;
+    min-width: 380px;    
+    background-color: #111;
+    border: 2px solid #ff8855; /*coral*/
+}
+
+.ImageTextBoxDescription{
+	font-size: 2vh;
+	margin: 6px 0px 0px 6px;
+}
+
+.ImageTextBoxImage{
+	position: absolute;
+
+	width: 350px;
+	height: 200px;
+
+	object-fit: cover;
+	flex-shrink: 0;
+
+	border: 2px solid;
+
+	box-shadow: 10px 10px 20px 0px #000b;
+	
+}
+@media (orientation: portrait){
+	div#ImageTextBox{
+		margin-top: 40vw;
+	}
+	.ImageTextBoxDescription{
+		font-size: 3vw;
+	}
+	.ImageTextBoxTitle{
+		font-size: 4vw;
+	}
+	.ImageTextBoxImage{
+		height: 250px;
+	}
+	.ImageTextBoxText{
+		min-height: 200px;
+	}
+
+}
+
+@media (orientation: landscape){
+	div#ImageTextBox{
+		margin-top: 30vh;
+	}
+	.ImageTextBoxDescription{
+		font-size: 3vh;
+	}
+	.ImageTextBoxTitle{
+		font-size: 4vh;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+/*textbox*/
+.TextBox {
+    margin: 40 80 40 0;
+background-color: #111;
+}
+.TextBoxTitle {
+	padding: 5px 10px;
+    margin-left: -20;
+    margin-top: -20;
+    position: absolute;
+    color: #ff8855;
+    border: 2px solid #ff8855; /*coral*/
+    box-shadow: 10px 10px 20px 0px #000b;
+    background-color: #111;
+}
+.TextBoxText {
+	padding: 60px 30px 20px 30px;
+    box-shadow: 10px 10px 20px 0px #000b;
+    border: 2px solid #ff8855; /*coral*/
+
+}
+@media (orientation: portrait){
+	.TextBoxTitle {
+    	font-size: 5vw;
+    }
+    .TextBoxText {
+    	font-size: 4vw;
+    }
+}
+@media (orientation: landscape){
+	.TextBoxTitle {
+    	font-size: 4vh;
+    }
+    .TextBoxText {
+    	font-size: 3vh;
+    }
+}
+
+
+
+form{
+	margin: 0;
+}
+input, textarea{
+	width: auto;
+    height: 30px;
+
+	background-color: #333;
+    border: 1px solid #ff8855;	
+
+    font-size: 2vh;
+    color: white;
+}
+textarea{
+	resize: none;
+	height: 5em;
+	display: inline-block;
+}
+input[type="submit"]{
+	margin-top: 10px;
+	color: #ff8855; /*coral*/
+}

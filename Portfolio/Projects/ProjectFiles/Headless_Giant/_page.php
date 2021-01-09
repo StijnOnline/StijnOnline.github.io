@@ -1,0 +1,36 @@
+
+<div class="TextBox CursorHover">
+	<h class="TextBoxTitle Write Cursor">Concept</h>
+	<div class="TextBoxText">
+		<img src="ProjectFiles/Headless_Giant/GiantConcept-small.jpg" class="FloatyImageLeft PopupImage">
+		<p class="Write">
+			The game is played by two people with one VR set and two additional trackers. The first player has the headset and is standing on top of a tower. The second player is blindfolded and has trackers on both hands and feet.
+		</p>
+	</div>	
+</div>
+
+
+<div class="TextBox CursorHover">
+	<h class="TextBoxTitle Write Cursor">Defend the tower</h>
+	<div class="TextBoxText">
+		<img src="ProjectFiles/Headless_Giant/Giant-small.jpg" class="FloatyImageLeft PopupImage">
+		<p class=" Write">
+			The two players need to work together to defend the tower. The player on top of the tower needs to look for enemies to instruct the blindfolded player where to go and crush the enemies.
+		</p>
+	</div>	
+</div>
+
+
+<div class="TextBox CursorHover">
+	<h class="TextBoxTitle Write Cursor">Gameplay</h>
+	<div class="TextBoxText">
+	<!--
+		<video width="500" height="300" controls preload="metadata" class="FloatyImageLeft" >
+			<source src="ProjectFiles/Headless_Giant/GiantGameplay.mp4#t=0.5" type="video/mp4" >
+			<p>Your browser does not support the video tag.</p>
+		</video>
+		-->
+		<iframe style="width: 70vmin;height: 40vmin;" class="FloatyImageLeft" width="560" height="315" src="https://www.youtube.com/embed/KvBP3Zcxq9o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<p>Here is a short video of the game being played by testers. (in Dutch)</p>
+	</div>
+</div>

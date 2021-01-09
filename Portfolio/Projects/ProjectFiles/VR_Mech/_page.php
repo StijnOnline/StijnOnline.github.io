@@ -1,0 +1,38 @@
+<div class="TextBox CursorHover">
+	<h class="TextBoxTitle Write Cursor">VR Mech Experiment</h>
+	<p class="TextBoxText Write">During a two week period I experimented with creating an asynchronous coöperative VR mech game. This means that two players need to work together. One uses the PC, the other uses a VR setup.
+	</p>
+</div>
+
+
+<div class="TextBox CursorHover">
+	<h class="TextBoxTitle Write Cursor">The Mech</h>
+	<div class="TextBoxText">
+		<img src="ProjectFiles/VR_Mech/FullMech-small.jpg" class="FloatyImageRight PopupImage">
+		<p class="Write">
+			The mech consists of two seperate parts. The bottom, similar to a tank, is controlled by the PC player and can be attached to the top part, which is a cabin with arms that are controlled by the player in VR. 
+		</p>
+	</div>	
+</div>
+
+
+<div class="TextBox CursorHover">	
+	<h class="TextBoxTitle Write Cursor">Grabbing</h>
+	<div class="TextBoxText">
+		<img src="ProjectFiles/VR_Mech/MechGrab-small.jpg" class="FloatyImageLeft PopupImage">
+		<p class="Write">
+			The top part of the mech can push, grab and throw objects.
+		</p>
+	</div>
+</div>
+
+
+<div class="TextBox CursorHover">	
+	<h class="TextBoxTitle Write Cursor">Level</h>
+	<div class="TextBoxText">
+		<img src="ProjectFiles/VR_Mech/MechLevel-small.jpg" class="FloatyImageRight PopupImage">
+		<p class="Write">
+			The game starts with the two players seperated. First each player has to complete a simple task to get to know the controls. The top part needs to grab and throw blocks into baskets. The bottom part has to maneuver through the terrain to pick up the top part. Once they are connected, the mech is complete and has to push a button to unlock the next level. The PC player then loses visuals and the two players will need to communicate to complete the game. The VR Player has to instruct the PC player to move in the right direction so that de VR player is able to throw blocks into new baskets.
+		</p>
+	</div>
+</div>
