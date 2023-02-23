@@ -39,46 +39,64 @@ def InsertDir(contents, directory):
     return contents
 
 
-def CreateListElement(ProjectPath, Template):
-    print("Project: " + ProjectPath)
-    if path.exists(ProjectPath + "/meta.json"):
-        if path.exists(ProjectPath + "/index.html"):
-            f = open(ProjectPath + "/meta.json", "r")
-            metadata = json.loads(f.read())
-            f.close()
+def GetListHTML(ProjectsPath, Template):
+    projects = [x[0] for x in os.walk(ProjectsPath)][1:]
 
-            html = Template
-            html = html.replace("$Link",ProjectPath[9:] + "/index.html")
-            html = html.replace("$Thumbnail",ProjectPath[9:] + "/thumbnail.jpg")
-            html = html.replace("$Title",metadata['FullName'])
-            html = html.replace("$Description",metadata['Description'])
-            return html
-        else:
+    listItems = [] #tuple: 0=priority 1=html
+    for project in projects:
+        print("Project: " + project)
+        if not path.exists(project + "/meta.json"):
+            print("Project meta file not found")
+            continue
+        if not path.exists(project + "/index.html"):
             print("html file not found")
-    else:
-        print("Project meta file not found")
+            continue
+
+        f = open(project + "/meta.json", "r")
+        metadata = json.loads(f.read())
+        f.close()
+        if ('Visible' in metadata.keys()) and  metadata['Visible'].lower() == 'false':
+            print("Project Hidden")
+            continue
+
+        html = Template
+        html = html.replace("$Link",project[9:] + "/index.html")
+        html = html.replace("$Thumbnail",project[9:] + "/thumbnail.jpg")
+        html = html.replace("$Title",metadata['FullName'])
+        html = html.replace("$Description",metadata['Description'])
+        listItem = (metadata['Priority'],(html))#tuple: 0=priority 1=html
+        #print(listItem)
+        listItems.append ( listItem )
+
+    listItems.sort(key=lambda x: x[0], reverse=True)
+    #print(listItems)
+    listhtml = '\n'.join((n[1] for n in listItems))
+    #print(listhtml)
+
     return ""
 
 def AddList(contents):
     match = re.search("<!--List\(.*,.*\)-->",contents)
-    if match:
-        params = match.group(0)[9:len(match.group(0))-4].split(",")
-        if path.exists("Includes/" + params[1] + ".html"):
-            f = open("Includes/" + params[1] + ".html", "r")
-            template = f.read();
-            f.close()
-            print("Template found")
-            if path.exists("Template/"+params[0]):
-                print("Project folder found")
-                listHtml = ""
-                for project in [x[0] for x in os.walk("Template/"+params[0])][1:]:
-                    listHtml+=CreateListElement(project,template)
-                return contents[:match.start(0)] + listHtml + contents[match.end(0):]
-            else:
-                print("could not find list folder: " + "Template/"+params[0])
-        else:
-            print("could not find template")
-    return contents
+    if not match:
+        return contents
+
+    print("Adding List")
+    params = match.group(0)[9:len(match.group(0))-4].split(",")
+    if not path.exists("Includes/" + params[1] + ".html"):
+        print("could not find list folder: " + "Template/" + params[0])
+        return contents
+
+    f = open("Includes/" + params[1] + ".html", "r")
+    template = f.read();
+    f.close()
+
+    if not path.exists("Template/"+params[0]):
+        print("Project folder not found")
+        return contents
+
+    projectspath = "Template/"+params[0]
+    return contents[:match.start(0)] + GetListHTML(projectspath,template) + contents[match.end(0):]
+
 
 def AddPageName(contents, folder):
     match = re.search("<!--PageName\(\)-->", contents)
