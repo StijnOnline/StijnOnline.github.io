@@ -68,12 +68,15 @@ def GetListHTML(ProjectsPath, Template):
         #print(listItem)
         listItems.append ( listItem )
 
+    if not len(listItem) > 0:
+        print("List still empty!")
+        return ""
+
     listItems.sort(key=lambda x: x[0], reverse=True)
     #print(listItems)
     listhtml = '\n'.join((n[1] for n in listItems))
     #print(listhtml)
-
-    return ""
+    return listhtml
 
 def AddList(contents):
     match = re.search("<!--List\(.*,.*\)-->",contents)
@@ -134,7 +137,7 @@ def Build(src, dst,testmode):
                 f.write(content);
                 f.close()
 
-testingMode=True
+testingMode=False
 TemplateFolder = "Template"
 DestinationFolder = "Build " + str(datetime.now().strftime("%d-%m-%Y %H.%M.%S"))
 Build(TemplateFolder,DestinationFolder,testingMode)
@@ -155,6 +158,5 @@ Build(TemplateFolder,DestinationFolder,testingMode)
 # - Metadata (Json)
 # - Page itself
 # - Title
-# TODO Priority
 #
 # Template
