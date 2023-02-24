@@ -1,5 +1,6 @@
 { 
 	"FullName" : "VR Mech Experiment",
-	"Priority" : 300,
-	"Description":"An experiment for an asynchronous coöperative VR mech game"	
+	"Priority" : 20191000,
+	"Description":"An experiment for an asynchronous coöperative VR mech game",
+	"Visible" : "false"
 }

@@ -1,6 +1,6 @@
 { 
 	"FullName" : "First VR Game",
-	"Priority" : 100,
+	"Priority" : 20190400,
 	"Description":"A short VR experience about lucid dreaming",
 	"Visible" : "false"
 }

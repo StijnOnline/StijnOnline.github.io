@@ -31,11 +31,11 @@ def SetTestModeText(contents, testmode):
         match = re.search("<!--TestModeOnly\([\s\S]*\)-->", contents)
     return contents
 
-def InsertDir(contents, directory):
-    match = re.search("<!--Dir\(\)-->",contents)
+def InsertBaseDir(contents, directory):
+    match = re.search("<!--BaseDir\(\)-->",contents)
     while match:
         contents = contents[:match.start(0)] + directory + contents[match.end(0):]
-        match = re.search("<!--Dir\(\)-->", contents)
+        match = re.search("<!--BaseDir\(\)-->", contents)
     return contents
 
 
@@ -64,6 +64,9 @@ def GetListHTML(ProjectsPath, Template):
         html = html.replace("$Thumbnail",project[9:] + "/thumbnail.jpg")
         html = html.replace("$Title",metadata['FullName'])
         html = html.replace("$Description",metadata['Description'])
+        if 'CustomCSS' in metadata.keys():
+            html = html.replace("$CustomCSS",metadata['CustomCSS'])
+        html = html.replace("$CSS_Class", (''.join(e for e in metadata['FullName'] if e.isalnum())))
         listItem = (metadata['Priority'],(html))#tuple: 0=priority 1=html
         #print(listItem)
         listItems.append ( listItem )
@@ -115,13 +118,17 @@ def AddPageName(contents, folder):
         match = re.search("<!--PageName\(\)-->", contents)
     return contents
 
-def Build(src, dst,testmode):
-    os.makedirs(dst)
+
+def Build(src, destinationPath, testmode, baseDir=""):
+    if not os.path.exists(destinationPath):
+        os.makedirs(destinationPath)
+    if baseDir=="":
+        baseDir = os.path.abspath(destinationPath)
     for item in os.listdir(src):
         s = os.path.join(src, item)
-        d = os.path.join(dst, item)
+        d = os.path.join(destinationPath, item)
         if os.path.isdir(s):
-            Build(s, d,testmode)
+            Build(s, d,testmode,baseDir)
         else:
             shutil.copy2(s, d)
             if(d.rsplit('.', 1)[1]=="html"):
@@ -130,17 +137,20 @@ def Build(src, dst,testmode):
                 f.close()
                 content = IncludeAll(content)
                 content = AddList(content)
-                content = InsertDir(content,os.path.abspath(DestinationFolder))
+                content = InsertBaseDir(content,baseDir)
                 content = AddPageName(content,src)
                 content = SetTestModeText(content,testmode)
                 f = open(d, "w")
                 f.write(content);
                 f.close()
 
-testingMode=False
+testingMode=True
 TemplateFolder = "Template"
 DestinationFolder = "Build " + str(datetime.now().strftime("%d-%m-%Y %H.%M.%S"))
-Build(TemplateFolder,DestinationFolder,testingMode)
+Build(TemplateFolder,DestinationFolder,testmode=False)
+print("Website build in: " + os.path.abspath(DestinationFolder))
+Build(TemplateFolder,"LastBuild",testmode=True)
+print("Website build in: " + os.path.abspath("LastBuild"))
 
 #Documentation
 #

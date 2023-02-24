@@ -1,5 +1,5 @@
 { 
 	"FullName" : "Internship Active Esports Arena",
-	"Priority" : 400,
+	"Priority" : 30000000,
 	"Description":"An active full body VR game"	
 }

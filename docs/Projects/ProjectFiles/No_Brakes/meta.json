@@ -1,5 +1,6 @@
 { 
 	"FullName" : "No Brakes!",
-	"Priority" : 300,
-	"Description":"A VR biking game"	
+	"Priority" : 20200000,
+	"Description":"A VR biking game",
+	"CustomCSS":"img.$CSS_Class{object-fit:fill;}"
 }
