@@ -75,11 +75,17 @@ async function WriteTexts(){
 			var i = 1;		
 			elements[e].innerHTML = "|";
 			while(i<=texts[e].length)
-	    	{    	
+	    	{
+	    	    //skip html tags
+	    	    if(texts[e][i]=="<"){
+					while(texts[e][i]!=">" && i<=texts[e].length){
+					    i++;
+					}
+				}
+
 	    		await sleep(PageWriteTime / totalcharacters);	
 		    	elements[e].innerHTML = texts[e].slice(0,i) +"|";
 		    	i++;
-		    	
 			}
 			elements[e].innerHTML = texts[e];
 		}
