@@ -8,9 +8,11 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+doneWriting = false
 window.addEventListener('load', function () {
 	WritingNavElement = document.getElementById('WritingNav');
-	PageTitle = document.title;
+	//PageTitle = document.title;
+	PageTitle = WritingNavElement.textContent;
 
 	Writer = new TextWriter("< "+PageTitle);	
 	Writer.Start();
@@ -39,12 +41,14 @@ async function SetCursorEvents(){
 			elements[e].querySelectorAll('.Cursor')[0].innerHTML = elements[e].querySelectorAll('.Cursor')[0].innerHTML + "&nbsp;";
 
 
-			elements[e].addEventListener('mouseenter', async function () {	
+			elements[e].addEventListener('mouseenter', async function () {
+			    if (!doneWriting) return;
 				var element = this.querySelectorAll('.Cursor')[0];							
 				element.innerHTML = element.innerHTML.replace("&nbsp;",'') + '|';
 			})
 
 			elements[e].addEventListener('mouseleave', async function () {
+			    if (!doneWriting) return;
 				var element = this.querySelectorAll('.Cursor')[0];
 				element.innerHTML = element.innerHTML.replace('|',"&nbsp;");
 			})
@@ -71,15 +75,22 @@ async function WriteTexts(){
 			var i = 1;		
 			elements[e].innerHTML = "|";
 			while(i<=texts[e].length)
-	    	{    	
+	    	{
+	    	    //skip html tags
+	    	    if(texts[e][i]=="<"){
+					while(texts[e][i]!=">" && i<=texts[e].length){
+					    i++;
+					}
+				}
+
 	    		await sleep(PageWriteTime / totalcharacters);	
 		    	elements[e].innerHTML = texts[e].slice(0,i) +"|";
 		    	i++;
-		    	
 			}
 			elements[e].innerHTML = texts[e];
 		}
 	}
+	doneWriting = true
 }
 
 

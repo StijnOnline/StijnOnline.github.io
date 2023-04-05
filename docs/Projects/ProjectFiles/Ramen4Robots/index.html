@@ -8,7 +8,7 @@
 <script type="text/javascript" src="Javascript/TitleWriter.js" defer></script>
 <script type="text/javascript" src="Javascript/PopupImages.js" defer></script>
 	<meta name="Description" content="Portfolio website of Game Development student Stijn van Deijzen, specializing in VR">
-	<title>Ramen 4 Robots</title>
+	<title>StijnOnline Portfolio: Ramen 4 Robots</title>
 </head>
 <body id="Home" >
 	<nav id="Top">
@@ -22,13 +22,26 @@
 
 	<div class="Bottom">
 
-<div class="TextBox CursorHover">
-	<h class="TextBoxTitle Write Cursor">4D Puzzle Game</h>
-	<p class="TextBoxText Write">Bla.
-	</p>
+<div class="ImageTextBox CursorHover">
+    <style>$CustomCSS</style>
+	<iframe style="width: 35vmin;height: 20vmin;" class="ImageTextBoxImage" width="560" height="315" src="https://www.youtube.com/embed/ocPM5WTgNnc?start=21" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen=""></iframe>
+	<h class="ImageTextBoxTitle Write Cursor">Ramen 4 Robots</h>
+	<div class="ImageTextBoxText">
+		<p class="ImageTextBoxDescription Write">
+			Ramen 4 Robots was a very experimental project where one designer and I searched for unique ways to create a VR skating game that really emphasized physical movement for the core mechanics.  In this game, you can skate, drift, jump, wallride, and grapple your way to deliver your ramen as quickly as possible.
+		</p>
+	 </div>
 </div>
 
-
+<div class="TextBox CursorHover">
+	<h class="TextBoxTitle Write Cursor">Challenge</h>
+	<div class="TextBoxText">
+		<p class="Write">
+			The challenge of this project was in finding ways to interpret the movement of the player to trigger mechanics in a way that feels natural and controllable, but also empowering.<br>
+			The main mechanic is a simple swing of the arm to gain momentum, but this simple mechanic needed to feel great. We wanted players to really swing their arms and not just flick their wrists, so to achieve this we did the following. We track the highest achieved velocity and the distance of the swing, both these factors combine to the resulting power.  Power also increases exponentially because making a fast swing even faster takes a lot more effort. This power then needs to be applied in a satisfying burst of speed. This way of designing how we use the player's movement data to trigger applied to all mechanics.
+		</p>
+	</div>
+</div>
 
 	</div>
 </body>

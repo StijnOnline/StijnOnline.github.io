@@ -123,7 +123,7 @@ a:hover,
 	font-style: bold;
 	position: absolute;
     margin-left: -20px;
-    margin-top: -4vmin;
+    margin-top: -4.5vmin;
     min-width: 38vmin;    
     background-color: #111;
     border: 2px solid #ff8855;
@@ -205,7 +205,7 @@ a:hover,
 
 
 .TextBox {
-	margin: 5vmin 5vmin 5vmin 8vmin;
+	margin: 4vmin 5vmin 4vmin 8vmin;
 	background-color: #111;
 
 	color: #ff8855 !important; 
@@ -223,8 +223,18 @@ a:hover,
     box-shadow: 10px 10px 20px 0px #000b;
     
 }
+.TextBoxHeader {
+	padding: 5px 10px;
+	margin: 5vmin 3vmin 3vmin 3vmin;
+	font-size: 7vmin;
+	position: static;
+    color: #ff8855;
+    background-color: #111;
+    border: 2px solid #ff8855; /*coral*/
+    box-shadow: 10px 10px 20px 0px #000b;
+}
 .TextBoxText {
-	padding: 6vmin 3vmin 3vmin 3vmin;
+	padding: 3vmin 3vmin 3vmin 3vmin;
     box-shadow: 10px 10px 20px 0px #000b;
     border: 2px solid #ff8855;
 
